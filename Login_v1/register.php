@@ -34,13 +34,13 @@ document.getElementById("message").className="alert alert-danger";
 }
 else if(a=='student_email_exhist')
 {
-document.getElementById("message").innerHTML="<strong>Email already exhists for this account  </strong> <a href=/edubuntu/Login_v1/login_student.php>Login Instead?</a>";
+document.getElementById("message").innerHTML="<strong>Email already exhists for this account  </strong> <a href=/Edubuntu-Initiative/Login_v1/login_student.php>Login Instead?</a>";
 document.getElementById("message").style.display="block";
 document.getElementById("message").className="alert alert-danger";
 }
 else if(a=='teacher_email_exhist')
 {
-document.getElementById("message").innerHTML="<strong>Email already exhists for this account  </strong> <a href=/edubuntu/Login_v1/login_teacher.php>Login Instead?</a>";
+document.getElementById("message").innerHTML="<strong>Email already exhists for this account  </strong> <a href=/Edubuntu-Initiative/Login_v1/login_teacher.php>Login Instead?</a>";
 document.getElementById("message").style.display="block";
 document.getElementById("message").className="alert alert-danger";
 };
@@ -121,7 +121,7 @@ document.getElementById("message").className="alert alert-danger";
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="/edubuntu/Login_v1/login_student.php">
+						<a class="txt2" href="/Edubuntu-Initiative/Login_v1/login_student.php">
 							Login to your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

@@ -7,6 +7,6 @@ session_unset();
 session_destroy(); 
 echo "LOGGING OUT...";
 sleep(5);
-header("Location: /edubuntu/Login_v1/login_student.php");
+header("Location: /Edubuntu-Initiative/Login_v1/login_student.php");
 die();
 ?>

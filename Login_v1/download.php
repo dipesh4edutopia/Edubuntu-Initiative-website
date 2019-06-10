@@ -6,7 +6,7 @@ if($_SESSION["email"]=='' || !isset($_SESSION["email"]))
 {	
 
 // if not logged in redirect 
-header("Location: /edubuntu/Login_v1/login_student.php?error=download");
+header("Location: /Edubuntu-Initiative/Login_v1/login_student.php?error=download");
 		die();	
 	
 }
@@ -94,7 +94,7 @@ header('Content-Type: application/');
 header("Content-Disposition: attachment; filename='{$email}.txt'");
 
 // The PDF source is in original.pdf
-readfile("‪http://localhost/edubuntu/Login_v1/file/{$course}{$sem}.txt");
+readfile("‪http://localhost/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt");
  */
 
  
@@ -108,7 +108,7 @@ $result = $conn->query($sql);
  
  
  
-$FileName = "/edubuntu/Login_v1/file/{$course}{$sem}.txt";
+$FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt";
 
 }
 
@@ -122,7 +122,7 @@ $FileName = "/edubuntu/Login_v1/file/{$course}{$sem}.txt";
 <!--https://codepen.io/wallaceerick/pen/ctsCz-->
 	<div class="limiter">
 		<div class="container-login100">
-			<form action="/edubuntu/Login_v1/download.php" method="get">
+			<form action="/Edubuntu-Initiative/Login_v1/download.php" method="get">
 				<center>
 
 
@@ -184,7 +184,7 @@ var inc_like = function() {
 	  
     }
   };
-  xhttp.open("GET", "/edubuntu/Login_v1/download.php?like=true", true);
+  xhttp.open("GET", "/Edubuntu-Initiative/Login_v1/download.php?like=true", true);
   xhttp.send();
   
 }

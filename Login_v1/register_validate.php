@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_SESSION["email"]))
 	{
-		header("Location: /edubuntu/Login_v1/download.php");
+		header("Location: /Edubuntu-Initiative/Login_v1/download.php");
 		die();
 	}	
 //https://www.w3schools.com/php/php_mysql_connect.asp
@@ -48,7 +48,7 @@ $type=$_GET["type"];
 			if($result->num_rows > 0)//found record //user exhist  
 			{
 				echo "email already exhist";
-				header("Location: /edubuntu/Login_v1/register.php?error={$type}_email_exhist");
+				header("Location: /Edubuntu-Initiative/Login_v1/register.php?error={$type}_email_exhist");
 				die();
 				//redirect to register as user already exhist 
 			}
@@ -62,7 +62,7 @@ $type=$_GET["type"];
 					//set session 
 					//redirect to download
 					//echo $sql;
-					header("Location: /edubuntu/Login_v1/download.php");
+					header("Location: /Edubuntu-Initiative/Login_v1/download.php");
 					die();
 			}
 			

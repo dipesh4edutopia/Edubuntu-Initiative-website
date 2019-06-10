@@ -4,7 +4,7 @@ session_start();
 if(isset($_SESSION["email"]))
 	{
 				
-		header("Location: /edubuntu/Login_v1/download.php");
+		header("Location: /Edubuntu-Initiative/Login_v1/download.php");
 		die();
 	}	
 //https://www.w3schools.com/php/php_mysql_connect.asp
@@ -56,13 +56,13 @@ $type=$_GET["type"];
 				
 					//set session 
 					//redirect to download
-					header("Location: /edubuntu/Login_v1/download.php");
+					header("Location: /Edubuntu-Initiative/Login_v1/download.php");
 					die();
 			}
 			else
 			{
 				echo "incorrect pass";
-				header("Location: /edubuntu/Login_v1/login_{$type}.php?error=invalid_pass");
+				header("Location: /Edubuntu-Initiative/Login_v1/login_{$type}.php?error=invalid_pass");
 				die();
 				//redirect to login with incorrect pass 
 			}
@@ -71,7 +71,7 @@ $type=$_GET["type"];
 			else//no user found
 			{
 				echo "no user found";
-				header("Location: /edubuntu/Login_v1/login_{$type}.php?error=no_user");
+				header("Location: /Edubuntu-Initiative/Login_v1/login_{$type}.php?error=no_user");
 				die();
 				
 				//redirect to login with no user found  

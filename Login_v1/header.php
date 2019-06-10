@@ -323,7 +323,7 @@
 					<li><a href="#" class="dropdown-item">BE</a></li>
 				</ul>
 			</li>
-			<li class="nav-item "><a href="/edubuntu/Login_v1/download.php" class="nav-link ">Download</a></li>
+			<li class="nav-item "><a href="/Edubuntu-Initiative/Login_v1/download.php" class="nav-link ">Download</a></li>
 			<li class="nav-item"><a href="#" class="nav-link">Join Us</a></li>
 			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 		</ul>
@@ -333,12 +333,12 @@
 			<li class="nav-item">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle active" href="#" id="login_button" >Login</a>
 				<ul class="dropdown-menu" id="login_button_dropdown">					
-					<li><a href="/edubuntu/Login_v1/login_teacher.php" class="dropdown-item " >Teacher</a></li>
-					<li><a href="/edubuntu/Login_v1/login_student.php" class="dropdown-item ">Student</a></li>
+					<li><a href="/Edubuntu-Initiative/Login_v1/login_teacher.php" class="dropdown-item " >Teacher</a></li>
+					<li><a href="/Edubuntu-Initiative/Login_v1/login_student.php" class="dropdown-item ">Student</a></li>
 				</ul>
 
 			<li class="nav-item">
-				<a href="/edubuntu/Login_v1/register.php" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" id="signup_button">Sign up</a>
+				<a href="/Edubuntu-Initiative/Login_v1/register.php" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" id="signup_button">Sign up</a>
 
 			</li>
 		</ul>
@@ -358,7 +358,7 @@
 							<!--change signup button to signout-->
 					
 							document.getElementById('signup_button').innerHTML = "Sign out";
-							document.getElementById('signup_button').href="/edubuntu/Login_v1/logout.php";
+							document.getElementById('signup_button').href="/Edubuntu-Initiative/Login_v1/logout.php";
 						}; 
 						
 						};

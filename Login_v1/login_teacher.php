@@ -76,7 +76,7 @@ window.onload=checkmsg();
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="/edubuntu/Login_v1/register.php">
+						<a class="txt2" href="/Edubuntu-Initiative/Login_v1/register.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
