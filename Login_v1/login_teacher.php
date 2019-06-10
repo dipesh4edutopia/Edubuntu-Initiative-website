@@ -1,3 +1,13 @@
+<?php 
+session_start(); // imp ! always place it in start 
+//if user is already logged in means email is set in session hence direct him to download page
+
+if(isset($_SESSION["email"]))
+	{
+		header("Location: /Edubuntu-Initiative/Login_v1/download.php");
+		die();
+	}
+?>
 <?php include('header.php'); ?>	
 	<!----2nd template starts from here -->
 	<div class="limiter">
