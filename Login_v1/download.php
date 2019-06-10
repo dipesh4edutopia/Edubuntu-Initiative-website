@@ -32,18 +32,27 @@ $dbname = "epiz_23803885_edubuntu";  */
 	
 	$email=$_SESSION["email"];	
 	$type=$_SESSION["type"];
+	
+	$sql = "SELECT downloads FROM global  ";
+	$result = $conn->query($sql);	
+   	$row = $result->fetch_assoc();//get liked status 
+	$downloads_msg=" DOWNLOADS: ".$row['downloads'];
+	
+	
 	$sql = "SELECT likes FROM {$type} WHERE email='{$email}' ";
 	$result = $conn->query($sql);	
 	$row = $result->fetch_assoc();//get liked status 
 	$liked="heart";
 	$like_msg="LIKE US!";
+	
+	
 	if($row['likes']==='1')//if user has pressed the like button in older sessions 
 	{
 	$liked="heart is-active"; //this is the heart animation class 
 	$sql = "SELECT likes FROM global  ";
 	$result = $conn->query($sql);	
    	$row = $result->fetch_assoc();//get liked status 
-	$like_msg="TOTAL LIKES: ".$row['likes'];
+	$like_msg=" LIKES: ".$row['likes'];
 	}
 // if user has liked then class is "heart is-active" else class is "heart"	
 	
@@ -71,7 +80,7 @@ if(isset($_GET['like']) && isset($_SESSION["email"])  )
 		$sql = "SELECT likes FROM global  ";
    		$result = $conn->query($sql);	
    		$row = $result->fetch_assoc();//get liked status 
-		echo "TOTAL LIKES: ".$row['likes'];
+		echo " LIKES: ".$row['likes'];
 	exit;
 }
 
@@ -120,8 +129,15 @@ $FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt";
 <!--main top bar ------------------------------------------------------------------------------------------------------------>
 <!-- https://getbootstrap.com/docs/4.0/components/dropdowns/  -->
 <!--https://codepen.io/wallaceerick/pen/ctsCz-->
+
+
+	
+	
 	<div class="limiter">
-		<div class="container-login100">
+	<div class="row" >
+		<div class="container-login100" style="justify-content: left;">
+		
+		<div class="col-md-7" >
 			<form action="/Edubuntu-Initiative/Login_v1/download.php" method="get">
 				<center>
 
@@ -161,40 +177,98 @@ $FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt";
     <script  src="js/index.js"></script>
 </center>
 </form>
+
 </div>
 
 
-<!---heart animation --------------------------------------------------------------------------------------------------->
-<div class="container-login100">
-	<div class="" style="display: inline-block; width=100%">
- <!--here class of heart is decided according to php liked variable -->
-		<div style="margin-left: 35px;" ><div class="<?php echo $liked;?>" id="heart_anim" style="" onclick='inc_like();'></div> <h3 id="like_us"> LIKE US!</h3></div>
 
+<div class="col-md-5" style="justify-content: center;     text-align: center;">
+<div class="row" >
+	<div class="col-md-6" style="justify-content: center;     text-align: center;">
+
+				
+				<!---heart animation --------------------------------------------------------------------------------------------------->
+				
+					
+				<!--here class of heart is decided according to php liked variable -->
+						<div class="row">
+						<div class="col-xs-5"  style="    padding-left: 0px;">
+						</div>
+						
+						<div class="col-xs-3">
+						
+						
+						<div class="<?php echo $liked;?>" id="heart_anim"  onclick='inc_like();'>
+						</div>
+						
+						</div>
+						
+						
+						<div class="col-xs-4">
+						</div>
+						</div>
+						<div class="" style="display: inline-block; width=100%">
+						<h3 id="like_us"><?php echo $like_msg; ?> </h3>
+						</div>
+				
+					
+				
+				
+				
+				<script >
+				/*https://www.w3schools.com/xml/tryit.asp?filename=tryajax_get2*/
+				var inc_like = function() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("like_us").innerHTML = this.responseText;
+					document.getElementById("heart_anim").classList.add("is-active");
+					
+					}
+				};
+				xhttp.open("GET", "/Edubuntu-Initiative/Login_v1/download.php?like=true", true);
+				xhttp.send();
+				
+				}
+				</script>
+				
+				
+				<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+				
+		</div>
+		<div class="col-md-6" style="justify-content: center;     text-align: center;">
+
+				
+				<!---download animation --------------------------------------------------------------------------------------------------->
+				
+					
+				<!--here class of heart is decided according to php liked variable -->
+						<div class="" id="" style="justify-self: center;margin-top: 0%;" onclick='inc_like();'>
+						<img src="images/download.svg" alt="download_image" width="30" height="100">
+						</div>
+						
+						<div class="" style="display: inline-block; width=100%">
+						
+						<h3  style="margin-top: 10%;" id="downloads"><?php echo $downloads_msg; ?> </h3>
+						</div>
+				
+					
+				
+				
+				
+			
+				
+			
+				
+		</div>
+		
+		
 	</div>
-  
+ </div><!---end of likes and download button --->
+
+
+
 </div>
-<script >
-/*https://www.w3schools.com/xml/tryit.asp?filename=tryajax_get2*/
-var inc_like = function() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("like_us").innerHTML = this.responseText;
-	  document.getElementById("heart_anim").classList.add("is-active");
-	  
-    }
-  };
-  xhttp.open("GET", "/Edubuntu-Initiative/Login_v1/download.php?like=true", true);
-  xhttp.send();
-  
-}
-</script>
-
-
-  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
-	
-	</div>
 	
 </body>
 
