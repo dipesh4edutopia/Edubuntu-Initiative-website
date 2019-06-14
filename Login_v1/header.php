@@ -303,7 +303,7 @@
 
 
 <body >
-<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+<nav class="navbar navbar-default navbar-expand-lg navbar-light fixed-top">
 	<div class="navbar-header d-flex col">
 		<a class="navbar-brand" href="#">Edubuntu<b>initiative</b></a>  		
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
@@ -315,7 +315,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
 			<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-			<li class="nav-item"><a href="#" class="nav-link">About US</a></li>			
+			<li class="nav-item"><a href="about.php" class="nav-link">About US</a></li>			
 			<li class="nav-item dropdown">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Computer Engineering <b ></b></a>
 				<ul class="dropdown-menu">					
