@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -27,7 +28,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Navbar Dropdown Login and Signup Form with Social Buttons</title>
+<title>Edubuntu-Initiative</title>
 <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -325,7 +326,7 @@
 			</li>
 			<li class="nav-item "><a href="/Edubuntu-Initiative/Login_v1/download.php" class="nav-link ">Download</a></li>
 			<li class="nav-item"><a href="#" class="nav-link">Join Us</a></li>
-			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+			<li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 		</ul>
 		
 	
