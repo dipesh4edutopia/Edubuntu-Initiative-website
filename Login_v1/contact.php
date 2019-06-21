@@ -1,7 +1,8 @@
 
 <?php 
-require_once('class.smtp.php');
-require_once('class.phpmailer.php');
+require_once('../PHPMailer-master/src/PHPMailer.php');
+require_once('../PHPMailer-master/src/Exception.php');
+require_once('../PHPMailer-master/src/SMTP.php');
 
 session_start(); // imp ! always place it in start 
 //if user is already logged in means email is set in session hence direct him to download page
@@ -21,26 +22,31 @@ session_start(); // imp ! always place it in start
 function sendmail($to,$nameto,$subject,$message,$altmess) 
 {
 
-  $from  = "yourcontact@yourdomain.com";
-  $namefrom = "yourname";
-  $mail = new PHPMailer();  
+ 
+  $from  = 'edubuntusmtp@gmail.com';
+  
+  $namefrom = "feedback";
+  $mail = new PHPMailer\PHPMailer\PHPMailer(); 
+//$mail->SMTPDebug = 2;
   $mail->CharSet = 'UTF-8';
   $mail->isSMTP();   // by SMTP
   $mail->SMTPAuth   = true;   // user and password
-  $mail->Host       = "localhost";
-  $mail->Port       = 25;
+  $mail->Host       = 'smtp.gmail.com';
+  $mail->Port       = 465;
   $mail->Username   = $from;  
-  $mail->Password   = "yourpassword";
-  $mail->SMTPSecure = "";    // options: 'ssl', 'tls' , ''  
-  $mail->setFrom($from,$namefrom);   // From (origin)
-  $mail->addCC($from,$namefrom);      // There is also addBCC
+  $mail->Password   = 'pass';//REPLACE BY PASSOWRD!!!!!!!!!
+  $mail->SMTPSecure = "ssl";    // options: 'ssl', 'tls' , ''  
+  $mail->setFrom("edubuntusmtp@gmail.com",$namefrom);   // From (origin)
+  $mail->addBCC("mohitburkule5@gmail.com",$namefrom);      // There is also addCC
   $mail->Subject  = $subject;
   $mail->AltBody  = $altmess;
   $mail->Body = $message;
   $mail->isHTML();   // Set HTML type
 //$mail->addAttachment("attachment");  
   $mail->addAddress($to, $nameto);
-  return $mail->send();
+
+   $mail->send();
+     //echo $mail->ErrorInfo;
 }
 
 $thank_you=0;
@@ -48,7 +54,8 @@ if(isset($_REQUEST['name']) && isset($_REQUEST['msg']) && isset($_REQUEST['email
 {
 	
 	
-	sendmail("feedback@yourdomain.com",$_REQUEST['email'].$_REQUEST['name'],"",$_REQUEST['msg'],"");
+	if(!sendmail("edubuntusmtp@gmail.com","","FEEDBACK","FROM : ".$_REQUEST['email']."<br>".$_REQUEST['msg'],""))
+		//echo "error";
 	$thank_you=1;
 	
 }
