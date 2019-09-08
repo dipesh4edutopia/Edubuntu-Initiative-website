@@ -15,8 +15,8 @@ if(isset($_SESSION["email"]))
 	
 	
 	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
+		<div class="container-login100" style="padding-top:70px;">
+			<div class="wrap-login100" style="padding-top:70px;">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="images/img-01.png" alt="IMG" >
 				</div>

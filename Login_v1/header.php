@@ -314,7 +314,7 @@
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
-			<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+			<li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
 			<li class="nav-item"><a href="about.php" class="nav-link">About US</a></li>			
 			<li class="nav-item dropdown">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Computer Engineering <b ></b></a>
@@ -325,7 +325,7 @@
 				</ul>
 			</li>
 			<li class="nav-item "><a href="/Edubuntu-Initiative/Login_v1/download.php" class="nav-link ">Download</a></li>
-			<li class="nav-item"><a href="#" class="nav-link">Join Us</a></li>
+			<li class="nav-item"><a href="join_us.php" class="nav-link">Join Us</a></li>
 			<li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 		</ul>
 		
@@ -388,4 +388,4 @@
 		
 		
 		<!--close the body and html tags -->
-	
+	</nav>

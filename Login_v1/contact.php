@@ -71,7 +71,7 @@ if(isset($_REQUEST['name']) && isset($_REQUEST['msg']) && isset($_REQUEST['email
 <style>
 body{
    
-   background: linear-gradient(1000deg,#ff7a05eb, #ff5805);
+   background: linear-gradient(1000deg,#ffac06, #ff5805);
 }
 .contact-form{
     background: #fff;
