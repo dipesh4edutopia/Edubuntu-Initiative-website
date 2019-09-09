@@ -3,7 +3,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> 
-
+<!---https://codepen.io/colloque/pen/bDgmx -->
 <!------ Include the above in your HEAD tag ---------->
 <div style="background: linear-gradient(1000deg,#ffac06, #ff5805);">
 <div>

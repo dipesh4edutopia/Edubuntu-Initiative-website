@@ -20,22 +20,31 @@
 
 
 <style>
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #211f1f;
+    text-align: center;
+    opacity: 1;
+    height: 50%;
+}
+
 .carousel-indicators li {
   width: 10px;
   height: 10px;
   border-radius: 100%;
 }
-.carousel-item {
-  height: 100vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 section {
-  padding-top: 5rem;
+  padding-top: 50rem;
   padding-bottom: 5rem;
 }
 
@@ -64,48 +73,118 @@ bgc2, .vLine, .hLine {
     font-size: 60px;
     margin-left: 2rem;
 }
-</style>
-<header>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('https://3.bp.blogspot.com/-_7vaKiNZPXk/XCWoF-0xj7I/AAAAAAAAAMk/Bx7Ne5WLEvINHPDoG1jwY6rGO2d62pprwCKgBGAs/s1600/ux-design.jpeg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">First Slide</h2>
-          <p class="lead">This is a description for the first slide.</p>
-        </div>
-      </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Second Slide</h2>
-          <p class="lead">This is a description for the second slide.</p>
-        </div>
-      </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://1.bp.blogspot.com/-GWl5F8P4t-8/XB4_VV4VE5I/AAAAAAAAAKE/SmHRzas-LpMpDBoLn6otR9AznVsr6L7OgCEwYBhgL/s1600/t1larg.africa.cnn.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Third Slide</h2>
-          <p class="lead">This is a description for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-  </div>
-</header>
+.carousel-inner {
+  position: relative;
+  /* Removed height here */
+  overflow: hidden;
+}
 
+.carousel-item {
+  position: relative;
+  width: 100vh;
+  height: 100vh;
+  display: none;
+  width: 100%;
+}
+</style>
+
+
+
+
+
+<style>
+.html5-video-player:not(.ytp-transparent), .html5-video-player.unstarted-mode, .html5-video-player.ad-interrupting, .html5-video-player.ended-mode, .html5-video-player.ytp-fullscreen {
+    background-color: #ffffff;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #271818;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    
+    filter: alpha(opacity=50);
+    opacity: .5;
+    height: 15%;
+}
+
+.carousel-control.left , .carousel-control.right{
+    background-image: None; 
+    background-image: None;
+    background-image: None;
+    background-image: None;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 60px;
+    color: #ffa306;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: 0.9;
+    height: 15%;
+}
+
+.carousel-control:hover {
+    color: #f90e0e;
+    text-decoration: none;
+
+    outline: 0;
+    opacity: 1;
+}
+
+.carousel-control:focus {
+    color: #ffa306;
+    text-decoration: none;
+
+    outline: 0;
+    opacity: .9;
+}
+
+
+</style>
+
+		        <div id="myCarousel" class="carousel slide" style="width:100%; height:auto; padding-top:100px">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="item active center" >
+				<iframe  name="frame1" width=100% height="400"  src="https://www.youtube.com/embed/9E-VqTT4MMI?showinfo=0&modestbranding=1&autoplay=1&showinfo=0&rel=0&color=red" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>        
+        
+                <div class="item"><iframe width=100% height="400" src="https://www.youtube.com/embed/VQf4MF-m1gA?showinfo=0&modestbranding=1&autoplay=1&showinfo=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="item"><iframe width=100% height="400" src="https://www.youtube.com/embed/RFYnIzwjKUg?showinfo=0&modestbranding=1&autoplay=1&showinfo=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev" height="200">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next" height="200">&rsaquo;</a>
+            </div>
+        </div>
+
+<script >
+window.setInterval(function(){
+
+var cssLink = document.createElement("link") 
+cssLink.href = "/test/test.css"; 
+cssLink .rel = "stylesheet"; 
+cssLink .type = "text/css"; 
+frames['frame1'].document.body.appendChild(cssLink);
+  /// call your function here
+}, 5000);
+
+</script>		
+		
+		
 <!-- Page Content -->
 <section class="py-5 text-center">
       <div class="container"> 
@@ -121,7 +200,7 @@ bgc2, .vLine, .hLine {
           </div>
           <div class="col-sm-6 col-lg-4 mb-3">
             <svg class="lnr text-primary services-icon">
-              <use xlink:href="#lnr-heart"></use>
+              <use xlink:href="#lnr-calendar-full"></use>
             </svg>
             <h6></h6>
             <p class="text-muted"><b>Personalise your Lecture more effectively</b></p>
@@ -166,7 +245,7 @@ bgc2, .vLine, .hLine {
 		  </div>
           <div class="col-sm-6 col-lg-4 mb-3">
             <svg class="lnr text-primary services-icon">
-              <use xlink:href="#lnr-magic-wand"></use>
+              <use xlink:href="#lnr-briefcase"></use>
             </svg>
             <h6></h6>
             <p class="text-muted"><b>Access to Educational Resources according to your syllabus at one place</b> </p>
@@ -175,14 +254,14 @@ bgc2, .vLine, .hLine {
 		  </div>
           <div class="col-sm-6 col-lg-4 mb-3">
             <svg class="lnr text-primary services-icon">
-              <use xlink:href="#lnr-heart"></use>
+              <use xlink:href="#lnr-map"></use>
             </svg>
             <h6></h6>
             <p class="text-muted"><b>Personalise your own Maps offline</b></p>
           </div>
           <div class="col-sm-6 col-lg-4 mb-3">
             <svg class="lnr text-primary services-icon">
-              <use xlink:href="#lnr-rocket"></use>
+              <use xlink:href="#lnr-graduation-hat"></use>
             </svg>
             <h6></h6>
             <p class="text-muted"><b>Grows with your expertise</b></p>
@@ -190,7 +269,7 @@ bgc2, .vLine, .hLine {
 		  
           <div class="col-sm-6 col-lg-4 mb-3">
             <svg class="lnr text-primary services-icon">
-              <use xlink:href="#lnr-inbox" ></use>
+              <use xlink:href="#lnr-book" ></use>
             </svg>
             <h6></h6>
             <p class="text-muted"><b>Accomodates all types of knowledge sources at one place</b></p>
@@ -216,6 +295,8 @@ bgc2, .vLine, .hLine {
 		
       </div>
 </section>
+
+<!---
 <section class="main">
 <div class="container mt-4">
     <h1 class="text-center mb-4 p-4 text-secondary">From The Blog</h1>
@@ -290,16 +371,19 @@ bgc2, .vLine, .hLine {
    </section>
    
    <!-- Header -->
+   <!----
 <header class="bg-primary text-center py-5 mb-4">
   <div class="container">
     <h1 class="font-weight-light text-white">Meet the Team</h1>
   </div>
 </header>
 
-<!-- Page Content -->
+<!-- Page Content 
+
 <div class="container">
   <div class="row">
     <!-- Team Member 1 -->
+	<!----
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
@@ -310,6 +394,7 @@ bgc2, .vLine, .hLine {
       </div>
     </div>
     <!-- Team Member 2 -->
+	<!----
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
@@ -320,6 +405,7 @@ bgc2, .vLine, .hLine {
       </div>
     </div>
     <!-- Team Member 3 -->
+	<!----
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
@@ -330,6 +416,7 @@ bgc2, .vLine, .hLine {
       </div>
     </div>
     <!-- Team Member 4 -->
+	<!----
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
@@ -341,7 +428,7 @@ bgc2, .vLine, .hLine {
     </div>
   </div>
   <!-- /.row -->
-
+<!----
 </div>
 
 <div class="container">
