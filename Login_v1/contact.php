@@ -1,10 +1,14 @@
+<?php 
 
+session_start(); // imp ! always place it in start
+?>
+<?php include('header.php'); ?>	
 <?php 
 require_once('../PHPMailer-master/src/PHPMailer.php');
 require_once('../PHPMailer-master/src/Exception.php');
 require_once('../PHPMailer-master/src/SMTP.php');
 
-session_start(); // imp ! always place it in start 
+//session_start(); // imp ! always place it in start 
 //if user is already logged in means email is set in session hence direct him to download page
 
 
@@ -64,7 +68,7 @@ if(isset($_REQUEST['name']) && isset($_REQUEST['msg']) && isset($_REQUEST['email
 
 
 ?>
-<?php include('header.php'); ?>	
+
 
 <!----    https://bootsnipp.com/snippets/7nmOW     ----->
 

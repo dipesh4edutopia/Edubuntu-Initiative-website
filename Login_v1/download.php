@@ -1,5 +1,10 @@
+<?php 
+
+session_start(); // imp ! always place it in start
+?>
+
 <?php
-session_start();
+
 
 //check if user has logged in
 if($_SESSION["email"]=='' || !isset($_SESSION["email"]))
@@ -23,7 +28,7 @@ header("Location: /Edubuntu-Initiative/Login_v1/login_student.php?error=download
 	 
 	 
 	//online server  login 
-/*  	$servername = "sql102.epizy.com";
+  /*	$servername = "sql102.epizy.com";
 $username = "epiz_23803885";
 $password = "nXBZqJIhIJm4Tn";
 $dbname = "epiz_23803885_edubuntu";  */
@@ -107,17 +112,24 @@ readfile("‪http://localhost/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.
  */
 
  
+ $x= @gettype(@filesize($_SERVER['DOCUMENT_ROOT']."/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.mm"));
+
+if ($x=='integer'){
+		
+	
+ 
  //record sem and course choice in student table
 $sql = "UPDATE student SET branch = '{$course}', sem = '{$sem}' WHERE email='{$email}' ";		
 $result = $conn->query($sql);
 
 //update no of download counter in global table 
+
  $sql='UPDATE global SET downloads = downloads + 1';
  $result = $conn->query($sql);
  
+ }
  
- 
-$FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt";
+$FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.mm";
 
 }
 
@@ -169,9 +181,48 @@ $FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt";
   <br>
 				<input type="submit" class="btn btn-primary" style="margin-top: 20px">
   <br>
-				<a href="<?php if($FileName) echo $FileName;?>"><?php if($FileName) echo "rightclick here to downoad"?></a>
+  
+  <style>
+  .h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+  
+  </style>
+<b style="text-color:red">
+<?php
+//@ supresses warnings and errors
+$x= @gettype(@filesize($_SERVER['DOCUMENT_ROOT']."/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.mm"));
+
+if ($x!='integer' && $FileName!='' ){
+		$FileName='';
+		echo "WE CURRENTLY DONT HAVE THAT MIND MAP , SORRY FOR THE INCONVENIENCE <br>CHCEK BACK SOON! ";
+	}	
+?>
+</b>
+
+
+
+				<a href="<?php if($FileName) echo $FileName; else echo "https://null/"; ?>" download <?php echo " id='downloadlink'"?> ><?php if($FileName) echo "<b> <h4>Click here to downoad ,<br>if download hasen't started already </h4></b>"?></a>
+				
 </div>
 
+
+
+<script >
+
+        var dlink =  
+            document.getElementById("downloadlink"); 
+		if (dlink.href!=="https://null/")
+		{
+			// executed if download link is created 
+			
+			dlink.click();
+			//dlink.text=dlink.href;
+		}
+ 
+   
+</script>
 
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script  src="js/index.js"></script>
@@ -192,7 +243,7 @@ $FileName = "/Edubuntu-Initiative/Login_v1/file/{$course}{$sem}.txt";
 					
 				<!--here class of heart is decided according to php liked variable -->
 						<div class="row">
-						<div class="col-xs-5"  style="    padding-left: 0px;">
+						<div class="col-xs-3"  style="    padding-left: 0px;">
 						</div>
 						
 						<div class="col-xs-3">

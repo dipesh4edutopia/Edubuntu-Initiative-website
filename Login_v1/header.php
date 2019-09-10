@@ -5,7 +5,7 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+	<script src="js/bootstrap-dropdownhover.min.js"></script>
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -21,6 +21,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css"><link rel="stylesheet" type="text/css" href="css/bootstrap-dropdownhover.min.css"">
 <!--===============================================================================================-->
 <!---TEMPLATE FROM  -------------------------------------------------------------------------------------------------------------------->
 <!--https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=navbar-dropdown-login-and-signup-form-with-social-buttons-->
@@ -303,6 +305,7 @@
 
 
 <body >
+
 <nav class="navbar navbar-default navbar-expand-lg navbar-light fixed-top">
 	<div class="navbar-header d-flex col">
 		<a class="navbar-brand" href="#">Edubuntu<b>initiative</b></a>  		
@@ -317,7 +320,7 @@
 			<li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
 			<li class="nav-item"><a href="about.php" class="nav-link">About US</a></li>			
 			<li class="nav-item dropdown">
-				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Computer Engineering <b ></b></a>
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#" onmouseover="this.click()" onmouseleave="this.click()">Computer Engineering <b ></b></a>
 				<ul class="dropdown-menu">					
 					<li><a href="#" class="dropdown-item">SE</a></li>
 					<li><a href="#" class="dropdown-item">TE</a></li>
@@ -332,7 +335,7 @@
 	
 		<ul class="nav navbar-nav navbar-right ml-auto">			
 			<li class="nav-item">
-				<a data-toggle="dropdown" class="nav-link dropdown-toggle active" href="#" id="login_button" >Login</a>
+				<a data-hover="dropdown" data-toggle="dropdown" class="nav-link dropdown-toggle active" href="#" id="login_button"  >Login</a>
 				<ul class="dropdown-menu" id="login_button_dropdown">					
 					<li><a href="/Edubuntu-Initiative/Login_v1/login_teacher.php" class="dropdown-item " >Teacher</a></li>
 					<li><a href="/Edubuntu-Initiative/Login_v1/login_student.php" class="dropdown-item ">Student</a></li>
@@ -349,6 +352,16 @@
 	<!--FOR CHANGING THE BUTTONS OF LOGIN AND SIGNUP AND MAKING THEM ACTIVE-->
 		
 		<script type="text/javascript">
+						
+						$('myselector').on('click',function(){  
+    // handle click event, put money in my bank account  
+}).on('mouseenter',function(){  
+    $(this).trigger('click');  // only on enter here
+    // handle hover mouse enter of hover event, put money in my bank account  
+}).on('mouseleave',function(){  
+    // handle mouse leave event of hover, put money in my bank account  
+}).trigger('click');
+						
 						var change_button = function() 
 						{
 						{

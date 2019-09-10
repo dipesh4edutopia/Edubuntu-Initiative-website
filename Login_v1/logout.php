@@ -1,3 +1,6 @@
+<?php 
+session_start(); // imp ! always place it in start
+?>
 <?php
 $_SESSION["email"]="";
 setcookie("PHPSESSID", "", -1, "/");
